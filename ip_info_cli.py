@@ -4,7 +4,7 @@ API_URL = "http://ip-api.com/json/"
 
 def fetch_ip_info():
     try:
-        response = requests.get(API_URL)
+        response = requests.get(API_URL, timeout=10)
         data = response.json()
         return {
             "IP": data.get("query"),
